@@ -27,4 +27,18 @@
     dict[NSFontAttributeName] = font;
     return [self sizeWithAttributes:dict];
 }
+
+
+- (NSString *)urlStringWithSubString:(NSString *)subString
+{
+    //需要把http连接进行转码,在赋值给模型
+    NSString *urlString= [self stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    //把scr= 之后的截取出来
+    NSRange urlRange = [urlString rangeOfString:subString];
+    
+    //在赋值给模型
+    urlString = [urlString substringFromIndex:urlRange.location + urlRange.length];
+    
+    return urlString;
+}
 @end

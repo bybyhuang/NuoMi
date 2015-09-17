@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>65E1C202-7637-4155-8252-0110CA1AC09B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BYNuoMi</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B40DD6F9F19074AE7FBB5D297117329CD9C47E07</key>
+		<string>https://github.com/bybyhuang/NuoMi.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BYNuoMi.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B40DD6F9F19074AE7FBB5D297117329CD9C47E07</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/bybyhuang/NuoMi.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B40DD6F9F19074AE7FBB5D297117329CD9C47E07</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B40DD6F9F19074AE7FBB5D297117329CD9C47E07</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BYNuoMi</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -21,7 +21,7 @@
     //一个三个按钮,每个按钮的宽度就是屏幕 - 20 /3
     
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
-    CGFloat margin = 10;
+    CGFloat margin = 5;
     
     //80/48
     CGFloat btnWidth = (screenWidth - 2*margin) /3;
@@ -38,7 +38,7 @@
     
     //计算标题所需的宽高
     
-    CGSize brandSize = [qiangGou.brand sizeWithTextFont:[UIFont systemFontOfSize:13]];
+    CGSize brandSize = [qiangGou.brand sizeWithTextFont:[UIFont systemFontOfSize:13.5]];
     
     CGFloat brandX = (btnWidth - brandSize.width) /2;
     CGFloat brandY = CGRectGetMaxY(imageFrame) + 2 *margin;
@@ -46,11 +46,11 @@
     
     self.brandFrame = brandFrame;
     
-    NSString *currentPrice = [NSString stringWithFormat:@"%ld",qiangGou.current_price];
-    CGSize currentSize= [currentPrice sizeWithTextFont:[UIFont systemFontOfSize:13]];
+    NSString *currentPrice = [NSString stringWithFormat:@"￥%ld",qiangGou.current_price];
+    CGSize currentSize= [currentPrice sizeWithTextFont:[UIFont systemFontOfSize:14]];
     
     NSString *marketPrice = [NSString stringWithFormat:@"%ld",qiangGou.market_price];
-    CGSize marketSize = [marketPrice sizeWithTextFont:[UIFont systemFontOfSize:10]];
+    CGSize marketSize = [marketPrice sizeWithTextFont:[UIFont systemFontOfSize:12]];
     
     //设置当前价格的frame
     CGFloat currentX = ( btnWidth - currentSize.width - marketSize.width) / 2;
@@ -67,6 +67,7 @@
     self.marketFrame = marketFrame;
     
     self.height = CGRectGetMaxY(marketFrame) + 3 * margin;
+    
     
     
     

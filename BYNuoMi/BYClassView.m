@@ -116,20 +116,7 @@
 }
 
 
-/*
- 北京:  http://112.80.255.88/naserver/home/homepage?appid=ios&bduss=&channel=com_dot_apple&cityid=100010000
- &cuid=23eb023553b0805c4ecfcab20c9fb02ad09dcefd&device=iPhone&ha=5&lbsidfa=2A6402F1-89AE-4A7A-842A-DF2AC2F76BA9&location=35.279810%2C115.468840&logpage=Home&net=wifi&os=8.4&sheight=1136&
- sign=57a3b563a88525dcdb58811b068ed647&swidth=640&terminal_type=ios&timestamp=1442370987935&tn=ios&uuid=23eb023553b0805c4ecfcab20c9fb02ad09dcefd&v=5.12.0
- 
- 
- 菏泽:http://112.80.255.88/naserver/home/homepage?appid=ios&bduss=&channel=com_dot_apple&cityid=1400170000
- &cuid=23eb023553b0805c4ecfcab20c9fb02ad09dcefd&device=iPhone&ha=5&lbsidfa=2A6402F1-89AE-4A7A-842A-DF2AC2F76BA9&location=35.279820%2C115.468840&logpage=Home&net=wifi&os=8.4&sheight=1136&
- sign=70029cf261f483f2e4874b3e6f7e98ad&swidth=640&terminal_type=ios&timestamp=1442371194807&tn=ios&uuid=23eb023553b0805c4ecfcab20c9fb02ad09dcefd&v=5.12.0
- 
- 
- http://112.80.255.88/naserver/home/homepage?appid=ios&bduss=&channel=com_dot_apple&cityid=1400170000&cuid=23eb023553b0805c4ecfcab20c9fb02ad09dcefd&device=iPhone&ha=5&lbsidfa=2A6402F1-89AE-4A7A-842A-DF2AC2F76BA9&location=35.279820%2C115.468840&logpage=Home&net=wifi&os=8.4&sheight=1136&sign=70029cf261f483f2e4874b3e6f7e98ad&swidth=640&terminal_type=ios&timestamp=1442371194807&tn=ios&uuid=23eb023553b0805c4ecfcab20c9fb02ad09dcefd&v=5.12.0
- 
- */
+
 
 #pragma mark - scrollView的代理方法
 

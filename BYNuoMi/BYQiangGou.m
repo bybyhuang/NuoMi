@@ -38,7 +38,7 @@
     //把从src=之后的再赋值给na_logo
     qiangGou.na_logo = [urlString substringFromIndex:srcRange.location+srcRange.length];
     
-    NSLog(@"deal_id =%ld , brand = %@ ,market_price=%ld , current_price =%ld,na_logo = %@",qiangGou.deal_id,qiangGou.brand,qiangGou.market_price,qiangGou.current_price,qiangGou.na_logo);
+//    NSLog(@"deal_id =%ld , brand = %@ ,market_price=%ld , current_price =%ld,na_logo = %@",qiangGou.deal_id,qiangGou.brand,qiangGou.market_price,qiangGou.current_price,qiangGou.na_logo);
     
     return qiangGou;
 }

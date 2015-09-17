@@ -7,11 +7,24 @@
 //
 
 #import "BYHomeViewController.h"
-#import "BYHomeViewClassCell.h"
 #import "BYHttpTool.h"
 #import "BYQiangGou.h"
+#import "BYQiangGouFrame.h"
+#import "BYBanner.h"
 
-@interface BYHomeViewController ()
+#import "BYHomeBannerCell.h"
+#import "BYHomeViewQiangGouCell.h"
+#import "BYHomeViewClassCell.h"
+
+
+
+@interface BYHomeViewController ()<BYHomeBannerCellDelegate>
+
+@property (nonatomic,strong)NSMutableArray *statuses;
+
+@property (nonatomic,strong)NSMutableArray *qiangGouFrameArray;
+
+@property (nonatomic,strong)NSMutableArray *bannerArray;
 
 @end
 
@@ -30,20 +43,88 @@
 }
 
 
+- (NSMutableArray *)statuses
+{
+    if(_statuses == nil)
+    {
+        _statuses = [NSMutableArray array];
+    }
+    return _statuses;
+}
+
+/**
+ *  抢购frame数组的懒加载
+ *
+ *  @return <#return value description#>
+ */
+- (NSMutableArray *)qiangGouFrameArray
+{
+    if(_qiangGouFrameArray == nil)
+    {
+        _qiangGouFrameArray = [NSMutableArray array];
+    }
+    return _qiangGouFrameArray;
+}
+
+
+/**
+ *  广告数据模型
+ *
+ *  @return <#return value description#>
+ */
+- (NSMutableArray *)bannerArray
+{
+    if(_bannerArray == nil)
+    {
+        _bannerArray = [NSMutableArray array];
+        
+    }
+    return _bannerArray;
+}
+
 - (void)getHomeStatuse
 {
     
     NSString *path = @"http://112.80.255.88/naserver/home/homepage?appid=ios&bduss=&channel=com_dot_apple&cityid=100010000&cuid=23eb023553b0805c4ecfcab20c9fb02ad09dcefd&device=iPhone&ha=5&lbsidfa=2A6402F1-89AE-4A7A-842A-DF2AC2F76BA9&location=35.279810%2C115.468840&logpage=Home&net=wifi&os=8.4&sheight=1136&sign=57a3b563a88525dcdb58811b068ed647&swidth=640&terminal_type=ios&timestamp=1442370987935&tn=ios&uuid=23eb023553b0805c4ecfcab20c9fb02ad09dcefd&v=5.12.0";
     
     [BYHttpTool GET:path parameters:nil success:^(id response) {
-//        NSLog(@"%@",response[@"data"][@"topten"][@"list"]);
+        
+        
+        
+        //获取banner的数据
+        for (NSDictionary *dict in response[@"data"][@"banners"])
+        {
+            BYBanner *banner = [BYBanner bannerWithDict:dict];
+            
+            [self.bannerArray addObject:banner];
+            
+            
+        }
+        
+        [self.statuses addObject:self.bannerArray ];
+        
+        
         
         for (NSDictionary *dict in response[@"data"][@"topten"][@"list"])
         {
             
-             [BYQiangGou qiangGouWithDict:dict];
+            BYQiangGou *qiangGou = [BYQiangGou qiangGouWithDict:dict];
+            
+            //转换成frame模型
+            BYQiangGouFrame *qiangGouFrame = [[BYQiangGouFrame alloc] init];
+            qiangGouFrame.qiangGou = qiangGou;
+            
+            //把带有frame的模型添加到数组中去
+            [self.qiangGouFrameArray addObject:qiangGouFrame];
+         
         }
+        //把含有广告数据的模型添加到总数据array中
+        [self.statuses addObject:self.qiangGouFrameArray];
         
+        
+        
+        //刷新表格数据
+        [self.tableView reloadData];
         
         //获取到精彩抢购的dict，转成模型
         
@@ -71,23 +152,92 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    return self.statuses.count +1;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    BYHomeViewClassCell *cell = [tableView dequeueReusableCellWithIdentifier:@"class"];
-    
-    if(cell == nil)
+    NSInteger temp = 0;
+    if(self.statuses.count < 2)
     {
-        cell = [[BYHomeViewClassCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"class"];
+        temp = 1;
+    }
+    
+    if(indexPath.row == (0 - temp))
+    {
+        
+//        NSLog(@"当前所在的%ld",indexPath.section);
+        BYHomeBannerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"banner"];
+        if(cell == nil)
+        {
+            cell = [[BYHomeBannerCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"banner"];
+            
+            
+            
+        }
+        //让当前控制器成为广告cell的代理
+        cell.delegate = self;
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.bannerArray = self.bannerArray;
+        return cell;
+    }
+    
+    if(indexPath.row == 1)
+    {
+        BYHomeViewClassCell *cell = [tableView dequeueReusableCellWithIdentifier:@"class"];
+        
+        if(cell == nil)
+        {
+            cell = [[BYHomeViewClassCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"class"];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        return cell;
+    }
+    
+    if(indexPath.row == 2)
+    {
+        BYHomeViewQiangGouCell *qiangGouCell = [tableView dequeueReusableCellWithIdentifier:@"qiangGou"];
+        
+        if(qiangGouCell == nil)
+        {
+            qiangGouCell = [[BYHomeViewQiangGouCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"qiangGou"];
+        }
+        
+        qiangGouCell.qiangGouFrameArray = self.qiangGouFrameArray;
+        
+        //设置cell不能被选中
+        qiangGouCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        return qiangGouCell;
+        
     }
     
     
-    return cell;
+    
+    return [[UITableViewCell alloc] init];
+    
 }
 
+
+#pragma mark - banner代理方法
+
+- (void)bannerCell:(BYHomeBannerCell *)bannerCell clickDeleteBtn:(UIButton *)button
+{
+    
+    NSLog(@"删除广告栏");
+    
+
+    NSIndexPath *index = [NSIndexPath indexPathForRow:0 inSection:0];
+    
+    
+    [self.statuses removeObjectAtIndex:0];
+    
+    [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:index] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -136,12 +286,21 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row == 0 )
+    NSInteger temp = 0;
+    if(self.statuses.count<2)
+    {
+        temp = 1;
+    }
+    
+    if(indexPath.row == (0 -temp) )
+    {
+        return 64;
+    }else
     {
         return 180;
     }
     
-    return 64;
+    return 180;
 }
 
 @end

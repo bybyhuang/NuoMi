@@ -10,6 +10,6 @@
 
 @interface BYHomeViewQiangGouCell : UITableViewCell
 
-@property (nonatomic,strong)NSArray *qiangGouArray;
+@property (nonatomic,strong)NSArray *qiangGouFrameArray;
 
 @end
