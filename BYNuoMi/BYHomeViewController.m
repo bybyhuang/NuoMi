@@ -16,9 +16,11 @@
 #import "BYHomeViewQiangGouCell.h"
 #import "BYHomeViewClassCell.h"
 
+#import "BYTitleView.h"
+#import "BYCityViewController.h"
 
 
-@interface BYHomeViewController ()<BYHomeBannerCellDelegate>
+@interface BYHomeViewController ()<BYHomeBannerCellDelegate,BYTitleViewDelegate>
 
 @property (nonatomic,strong)NSMutableArray *statuses;
 
@@ -33,6 +35,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setUpTitle];
+    
+    //设置标题数据
     
 //    NSString *string = @"http://cdn00.baidu-img.cn/timg?nuomina&size=w320&imgtype=4&sec=1418745600&di=82ab1161a14fa58073ddc71e184a0440&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fnuomi%2Fpic%2Fitem%2F94cad1c8a786c9177f44d18dcc3d70cf3bc7573a.jpg";
 //    NSString *s1 =[string stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -82,6 +87,29 @@
     return _bannerArray;
 }
 
+
+
+-(void)setUpTitle
+{
+    
+    BYTitleView *titleView = [[BYTitleView alloc] init];
+    titleView.size = self.navigationController.navigationBar.size;
+//    titleView.backgroundColor = [UIColor redColor];
+    self.navigationItem.titleView = titleView;
+    
+    //让当前控制器成为titleView的代理
+    titleView.delegate = self;
+    
+//    view.backgroundColor = [UIColor redColor];
+    
+    
+//    self presentViewController:[] animated:<#(BOOL)#> completion:<#^(void)completion#>
+    
+}
+
+/**
+ *  获取首页数据
+ */
 - (void)getHomeStatuse
 {
     
@@ -95,6 +123,7 @@
         for (NSDictionary *dict in response[@"data"][@"banners"])
         {
             BYBanner *banner = [BYBanner bannerWithDict:dict];
+//            NSLog(@"1==%@ 2==%@",banner.picture_url,banner.cont);
             
             [self.bannerArray addObject:banner];
             
@@ -237,6 +266,24 @@
     
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:index] withRowAnimation:UITableViewRowAnimationAutomatic];
     
+}
+
+
+#pragma mark - titleView的代理方法
+- (void)titleView:(BYTitleView *)titleView clickCityButton:(BYCityButton *)cityButton
+{
+    
+    
+    BYCityViewController *viewController = [[BYCityViewController alloc ]init];
+    //包装一个UINavigationController
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
+    
+    
+    
+//    viewController.view.backgroundColor = [UIColor redColor];
+    
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 /*

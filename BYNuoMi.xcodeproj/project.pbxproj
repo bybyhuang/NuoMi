@@ -65,6 +65,18 @@
 		8F9A11411BA9943C0013F480 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9A11301BA9943C0013F480 /* UIImageView+WebCache.m */; };
 		8F9A11421BA9943C0013F480 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9A11321BA9943C0013F480 /* UIView+WebCacheOperation.m */; };
 		8F9A11451BA994D30013F480 /* BYQiangGouFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9A11441BA994D30013F480 /* BYQiangGouFrame.m */; };
+		8FCA53361BB2A121000A1163 /* BYTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCA53351BB2A121000A1163 /* BYTitleView.m */; };
+		8FCA53391BB2A1A4000A1163 /* BYCityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCA53381BB2A1A4000A1163 /* BYCityButton.m */; };
+		8FE597DF1BB4E4BA00B69A33 /* BYCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE597DE1BB4E4BA00B69A33 /* BYCityViewController.m */; };
+		8FE597EC1BB4F0C800B69A33 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE597E21BB4F0C800B69A33 /* FMDatabase.m */; };
+		8FE597ED1BB4F0C800B69A33 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE597E41BB4F0C800B69A33 /* FMDatabaseAdditions.m */; };
+		8FE597EE1BB4F0C800B69A33 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE597E61BB4F0C800B69A33 /* FMDatabasePool.m */; };
+		8FE597EF1BB4F0C800B69A33 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE597E81BB4F0C800B69A33 /* FMDatabaseQueue.m */; };
+		8FE597F01BB4F0C800B69A33 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE597EB1BB4F0C800B69A33 /* FMResultSet.m */; };
+		8FE597F21BB4F0F100B69A33 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE597F11BB4F0F100B69A33 /* libsqlite3.0.dylib */; };
+		8FE597F61BB4F69F00B69A33 /* BYCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE597F51BB4F69F00B69A33 /* BYCity.m */; };
+		8FE8BC111BB560BA00DA3695 /* CITYDATADB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 8FE8BC101BB560BA00DA3695 /* CITYDATADB.sqlite */; };
+		8FE8BC141BB5777000DA3695 /* BYSearchViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8BC131BB5777000DA3695 /* BYSearchViewCell.m */; };
 		8FF9DE2C1BAA48C90006E706 /* BYBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF9DE2B1BAA48C90006E706 /* BYBanner.m */; };
 		8FF9DE2F1BAABC6F0006E706 /* BYHomeBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF9DE2E1BAABC6F0006E706 /* BYHomeBannerCell.m */; };
 		8FF9DE321BAABE250006E706 /* BYBannerFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF9DE311BAABE250006E706 /* BYBannerFrame.m */; };
@@ -199,6 +211,29 @@
 		8F9A11321BA9943C0013F480 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		8F9A11431BA994D30013F480 /* BYQiangGouFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYQiangGouFrame.h; sourceTree = "<group>"; };
 		8F9A11441BA994D30013F480 /* BYQiangGouFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYQiangGouFrame.m; sourceTree = "<group>"; };
+		8FCA53341BB2A121000A1163 /* BYTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYTitleView.h; sourceTree = "<group>"; };
+		8FCA53351BB2A121000A1163 /* BYTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYTitleView.m; sourceTree = "<group>"; };
+		8FCA53371BB2A1A4000A1163 /* BYCityButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYCityButton.h; sourceTree = "<group>"; };
+		8FCA53381BB2A1A4000A1163 /* BYCityButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYCityButton.m; sourceTree = "<group>"; };
+		8FE597DD1BB4E4BA00B69A33 /* BYCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYCityViewController.h; sourceTree = "<group>"; };
+		8FE597DE1BB4E4BA00B69A33 /* BYCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYCityViewController.m; sourceTree = "<group>"; };
+		8FE597E11BB4F0C800B69A33 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		8FE597E21BB4F0C800B69A33 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		8FE597E31BB4F0C800B69A33 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		8FE597E41BB4F0C800B69A33 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		8FE597E51BB4F0C800B69A33 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		8FE597E61BB4F0C800B69A33 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		8FE597E71BB4F0C800B69A33 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		8FE597E81BB4F0C800B69A33 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		8FE597E91BB4F0C800B69A33 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		8FE597EA1BB4F0C800B69A33 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		8FE597EB1BB4F0C800B69A33 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		8FE597F11BB4F0F100B69A33 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		8FE597F41BB4F69F00B69A33 /* BYCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYCity.h; sourceTree = "<group>"; };
+		8FE597F51BB4F69F00B69A33 /* BYCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYCity.m; sourceTree = "<group>"; };
+		8FE8BC101BB560BA00DA3695 /* CITYDATADB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = CITYDATADB.sqlite; sourceTree = "<group>"; };
+		8FE8BC121BB5777000DA3695 /* BYSearchViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYSearchViewCell.h; sourceTree = "<group>"; };
+		8FE8BC131BB5777000DA3695 /* BYSearchViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYSearchViewCell.m; sourceTree = "<group>"; };
 		8FF9DE2A1BAA48C90006E706 /* BYBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYBanner.h; sourceTree = "<group>"; };
 		8FF9DE2B1BAA48C90006E706 /* BYBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYBanner.m; sourceTree = "<group>"; };
 		8FF9DE2D1BAABC6F0006E706 /* BYHomeBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYHomeBannerCell.h; sourceTree = "<group>"; };
@@ -212,6 +247,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FE597F21BB4F0F100B69A33 /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +264,7 @@
 		8F4ABC111BA6F13E007DD25C = {
 			isa = PBXGroup;
 			children = (
+				8FE597F11BB4F0F100B69A33 /* libsqlite3.0.dylib */,
 				8F4ABC1C1BA6F13E007DD25C /* BYNuoMi */,
 				8F4ABC361BA6F13F007DD25C /* BYNuoMiTests */,
 				8F4ABC1B1BA6F13E007DD25C /* Products */,
@@ -369,6 +406,8 @@
 			children = (
 				8F4ABC4E1BA6F982007DD25C /* BYHomeViewController.h */,
 				8F4ABC4F1BA6F982007DD25C /* BYHomeViewController.m */,
+				8FE597DD1BB4E4BA00B69A33 /* BYCityViewController.h */,
+				8FE597DE1BB4E4BA00B69A33 /* BYCityViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -386,6 +425,8 @@
 				8F9A106B1BA911760013F480 /* BYHomeViewQiangGouCell.m */,
 				8FF9DE2D1BAABC6F0006E706 /* BYHomeBannerCell.h */,
 				8FF9DE2E1BAABC6F0006E706 /* BYHomeBannerCell.m */,
+				8FE8BC121BB5777000DA3695 /* BYSearchViewCell.h */,
+				8FE8BC131BB5777000DA3695 /* BYSearchViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -401,6 +442,8 @@
 				8FF9DE2B1BAA48C90006E706 /* BYBanner.m */,
 				8FF9DE301BAABE250006E706 /* BYBannerFrame.h */,
 				8FF9DE311BAABE250006E706 /* BYBannerFrame.m */,
+				8FE597F41BB4F69F00B69A33 /* BYCity.h */,
+				8FE597F51BB4F69F00B69A33 /* BYCity.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -419,7 +462,12 @@
 		8F6F2D3B1BA84F5C00AA66DF /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				8FE8BC101BB560BA00DA3695 /* CITYDATADB.sqlite */,
 				8F6F2D3C1BA84F6600AA66DF /* menuPlist.plist */,
+				8FCA53341BB2A121000A1163 /* BYTitleView.h */,
+				8FCA53351BB2A121000A1163 /* BYTitleView.m */,
+				8FCA53371BB2A1A4000A1163 /* BYCityButton.h */,
+				8FCA53381BB2A1A4000A1163 /* BYCityButton.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -427,6 +475,7 @@
 		8F9A106D1BA912F70013F480 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				8FE597E01BB4F0C800B69A33 /* fmdb */,
 				8F9A11111BA9943C0013F480 /* SDWebImage */,
 				8F9A10EE1BA98B4A0013F480 /* MJExtension */,
 				8F9A106E1BA913460013F480 /* AFNetworking */,
@@ -539,6 +588,24 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		8FE597E01BB4F0C800B69A33 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				8FE597E11BB4F0C800B69A33 /* FMDatabase.h */,
+				8FE597E21BB4F0C800B69A33 /* FMDatabase.m */,
+				8FE597E31BB4F0C800B69A33 /* FMDatabaseAdditions.h */,
+				8FE597E41BB4F0C800B69A33 /* FMDatabaseAdditions.m */,
+				8FE597E51BB4F0C800B69A33 /* FMDatabasePool.h */,
+				8FE597E61BB4F0C800B69A33 /* FMDatabasePool.m */,
+				8FE597E71BB4F0C800B69A33 /* FMDatabaseQueue.h */,
+				8FE597E81BB4F0C800B69A33 /* FMDatabaseQueue.m */,
+				8FE597E91BB4F0C800B69A33 /* FMDB.h */,
+				8FE597EA1BB4F0C800B69A33 /* FMResultSet.h */,
+				8FE597EB1BB4F0C800B69A33 /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -622,6 +689,7 @@
 				8F4ABC291BA6F13F007DD25C /* Main.storyboard in Resources */,
 				8F4ABC2E1BA6F13F007DD25C /* LaunchScreen.xib in Resources */,
 				8F6F2D3D1BA84F6600AA66DF /* menuPlist.plist in Resources */,
+				8FE8BC111BB560BA00DA3695 /* CITYDATADB.sqlite in Resources */,
 				8F4ABC2B1BA6F13F007DD25C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -643,6 +711,7 @@
 				8F9A11371BA9943C0013F480 /* SDWebImageDecoder.m in Sources */,
 				8F9A113A1BA9943C0013F480 /* SDWebImageManager.m in Sources */,
 				8F9A10911BA9163E0013F480 /* BYQiangGou.m in Sources */,
+				8FE597EC1BB4F0C800B69A33 /* FMDatabase.m in Sources */,
 				8F4ABC261BA6F13E007DD25C /* ViewController.m in Sources */,
 				8F9A110F1BA98B4A0013F480 /* NSObject+MJProperty.m in Sources */,
 				8F9A110B1BA98B4A0013F480 /* MJPropertyType.m in Sources */,
@@ -655,6 +724,8 @@
 				8F9A113F1BA9943C0013F480 /* UIImage+WebP.m in Sources */,
 				8F9A11101BA98B4A0013F480 /* NSString+MJExtension.m in Sources */,
 				8F9A11351BA9943C0013F480 /* SDImageCache.m in Sources */,
+				8FE597ED1BB4F0C800B69A33 /* FMDatabaseAdditions.m in Sources */,
+				8FE597EF1BB4F0C800B69A33 /* FMDatabaseQueue.m in Sources */,
 				8F9A10891BA913460013F480 /* AFURLResponseSerialization.m in Sources */,
 				8F9A110A1BA98B4A0013F480 /* MJPropertyKey.m in Sources */,
 				8F9A10871BA913460013F480 /* AFURLConnectionOperation.m in Sources */,
@@ -675,22 +746,29 @@
 				8F4ABC591BA6F9D6007DD25C /* BYMineViewController.m in Sources */,
 				8F9A11081BA98B4A0013F480 /* MJFoundation.m in Sources */,
 				8F6F2D371BA7AAAB00AA66DF /* NSString+Extension.m in Sources */,
+				8FE597F01BB4F0C800B69A33 /* FMResultSet.m in Sources */,
 				8FF9DE2C1BAA48C90006E706 /* BYBanner.m in Sources */,
 				8F9A10881BA913460013F480 /* AFURLRequestSerialization.m in Sources */,
 				8F9A10851BA913460013F480 /* AFNetworkReachabilityManager.m in Sources */,
 				8F6F2D1B1BA7968900AA66DF /* BYHomeViewClassCell.m in Sources */,
+				8FE8BC141BB5777000DA3695 /* BYSearchViewCell.m in Sources */,
 				8F9A110E1BA98B4A0013F480 /* NSObject+MJKeyValue.m in Sources */,
 				8F9A108E1BA9137C0013F480 /* BYHttpTool.m in Sources */,
 				8F9A11411BA9943C0013F480 /* UIImageView+WebCache.m in Sources */,
 				8F4ABC501BA6F982007DD25C /* BYHomeViewController.m in Sources */,
+				8FE597EE1BB4F0C800B69A33 /* FMDatabasePool.m in Sources */,
 				8F9A11421BA9943C0013F480 /* UIView+WebCacheOperation.m in Sources */,
 				8F6F2D3A1BA83F5A00AA66DF /* BYHomeMenuBtn.m in Sources */,
 				8F9A113B1BA9943C0013F480 /* SDWebImagePrefetcher.m in Sources */,
 				8FF9DE321BAABE250006E706 /* BYBannerFrame.m in Sources */,
+				8FCA53391BB2A1A4000A1163 /* BYCityButton.m in Sources */,
 				8F9A10821BA913460013F480 /* AFHTTPRequestOperation.m in Sources */,
 				8F9A11341BA9943C0013F480 /* NSData+ImageContentType.m in Sources */,
+				8FE597F61BB4F69F00B69A33 /* BYCity.m in Sources */,
 				8F4ABC561BA6F9AD007DD25C /* BYSelectViewController.m in Sources */,
+				8FCA53361BB2A121000A1163 /* BYTitleView.m in Sources */,
 				8F9A10841BA913460013F480 /* AFHTTPSessionManager.m in Sources */,
+				8FE597DF1BB4E4BA00B69A33 /* BYCityViewController.m in Sources */,
 				8F9A110C1BA98B4A0013F480 /* NSObject+MJClass.m in Sources */,
 				8F4ABC531BA6F99A007DD25C /* BYNearViewController.m in Sources */,
 				8F9A113C1BA9943C0013F480 /* UIButton+WebCache.m in Sources */,

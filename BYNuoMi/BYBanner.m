@@ -27,9 +27,11 @@
 //    
     banner.picture_url = [banner.picture_url urlStringWithSubString:@"src="];
 
-    
     banner.cont = [banner.cont urlStringWithSubString:@"url="];
     
+    
+    
+   
     
     //跳转界面和上面一样
     //可以写成一个分类-- 写到NSString- extension中

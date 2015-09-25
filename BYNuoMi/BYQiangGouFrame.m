@@ -46,10 +46,10 @@
     
     self.brandFrame = brandFrame;
     
-    NSString *currentPrice = [NSString stringWithFormat:@"￥%ld",qiangGou.current_price];
+    NSString *currentPrice = [NSString stringWithFormat:@"￥%g",qiangGou.current_price / 100.0];
     CGSize currentSize= [currentPrice sizeWithTextFont:[UIFont systemFontOfSize:14]];
     
-    NSString *marketPrice = [NSString stringWithFormat:@"%ld",qiangGou.market_price];
+    NSString *marketPrice = [NSString stringWithFormat:@"%g",qiangGou.market_price/ 100.0];
     CGSize marketSize = [marketPrice sizeWithTextFont:[UIFont systemFontOfSize:12]];
     
     //设置当前价格的frame

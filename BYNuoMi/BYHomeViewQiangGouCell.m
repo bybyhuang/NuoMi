@@ -136,7 +136,7 @@
     UILabel *currentPrice = [[UILabel alloc] init];
     currentPrice.textColor = pinkColor;
     [button addSubview:currentPrice];
-    currentPrice.text = [NSString stringWithFormat:@"￥%ld",qiangGou.current_price];
+    currentPrice.text = [NSString stringWithFormat:@"￥%g",qiangGou.current_price / 100.0];
     currentPrice.font = fourteen;
     currentPrice.frame = qiangGouFrame.currentFrame;
     
@@ -144,7 +144,9 @@
     UILabel *marketPrice = [[UILabel alloc] init];
     marketPrice.textColor = pinkColor;
     [button addSubview:marketPrice];
-    marketPrice.text = [NSString stringWithFormat:@"%ld",qiangGou.market_price];
+    
+    
+    marketPrice.text = [NSString stringWithFormat:@"%g",qiangGou.market_price / 100.0];
     marketPrice.font = [UIFont systemFontOfSize:12];
     marketPrice.frame = qiangGouFrame.marketFrame;
     

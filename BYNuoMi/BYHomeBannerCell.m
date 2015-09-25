@@ -13,9 +13,11 @@
 
 #define screenWidth [UIScreen mainScreen].bounds.size.width
 
-@interface BYHomeBannerCell()
+@interface BYHomeBannerCell()<UIScrollViewDelegate>
 
 @property (nonatomic,weak)UIScrollView *scrollView;
+
+@property (nonatomic,weak)UIPageControl *pageControl;
 
 @end
 
@@ -31,6 +33,12 @@
         //设置scrollView的分页效果
         scrollView.pagingEnabled = YES;
         
+        //设置不显示水平和垂直的滚动栏
+        scrollView.showsHorizontalScrollIndicator = NO;
+        scrollView.showsVerticalScrollIndicator = NO;
+        
+        //成为scrollView的代理，用于设置pageControl
+        scrollView.delegate = self;
         
         [self.contentView addSubview:scrollView];
         
@@ -62,6 +70,23 @@
 {
     _bannerArray = bannerArray;
     
+    //添加pageControl
+    UIPageControl *pageControl = [[UIPageControl alloc] init];
+    
+    [pageControl setValue:[UIImage imageNamed:@"pageControl_default"] forKey:@"pageImage"];
+    
+    
+    [pageControl setValue:[UIImage imageNamed:@"pageControl_selected"] forKey:@"currentPageImage"];
+    
+    pageControl.numberOfPages = bannerArray.count;
+    [self.contentView addSubview:pageControl];
+    
+    self.pageControl = pageControl;
+    
+    
+    
+    
+    
     for(int i =0; i<bannerArray.count; i++)
     {
         UIButton *bannerBtn = [[UIButton alloc] init];
@@ -83,6 +108,32 @@
     }
     
     self.scrollView.contentSize = CGSizeMake(screenWidth * bannerArray.count, 0);
+    
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(turnScrollView) userInfo:nil repeats:YES];
+}
+
+/**
+ *  让scrollView滚动
+ *
+ *  @param button <#button description#>
+ */
+
+- (void)turnScrollView
+{
+    
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        if(self.scrollView.contentOffset.x < (self.bannerArray.count -1) * screenWidth)
+        {
+            self.scrollView.contentOffset = CGPointMake(self.scrollView.contentOffset.x + screenWidth, self.scrollView.contentOffset.y);
+        }else
+        {
+            self.scrollView.contentOffset = CGPointMake(0 + screenWidth, self.scrollView.contentOffset.y);
+        }
+        
+        
+        
+    }];
 }
 
 
@@ -92,6 +143,24 @@
     {
         [self.delegate bannerCell:self clickDeleteBtn:button];
     }
+}
+
+
+#pragma mark - scrollView的代理
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    //判断当前的页数
+    NSInteger currentPage =  ( scrollView.contentOffset.x / self.scrollView.width );
+    self.pageControl.currentPage = currentPage;
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    self.pageControl.centerX = self.scrollView.width / 2;
+    self.pageControl.y  = self.scrollView.height - 10;
 }
 
 @end
