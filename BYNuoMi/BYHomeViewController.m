@@ -45,8 +45,27 @@
 //    NSLog(@"%@",s1);
     [self getHomeStatuse];
     
+    
+    //添加消息监听器
+    [self setUpNotification];
+    
 }
 
+/**
+ *  添加消息监听器
+ */
+- (void)setUpNotification
+{
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    //加：会把消息本身都传过去
+    [center addObserver:self selector:@selector(searchCity:) name:@"BYSearchCityNotification" object:nil];
+}
+
+- (void)searchCity:(NSNotification *)notification
+{
+    
+    
+}
 
 - (NSMutableArray *)statuses
 {

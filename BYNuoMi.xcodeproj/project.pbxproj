@@ -77,6 +77,7 @@
 		8FE597F61BB4F69F00B69A33 /* BYCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE597F51BB4F69F00B69A33 /* BYCity.m */; };
 		8FE8BC111BB560BA00DA3695 /* CITYDATADB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 8FE8BC101BB560BA00DA3695 /* CITYDATADB.sqlite */; };
 		8FE8BC141BB5777000DA3695 /* BYSearchViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8BC131BB5777000DA3695 /* BYSearchViewCell.m */; };
+		8FE8BC171BB57DC800DA3695 /* BYSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8BC161BB57DC800DA3695 /* BYSearchBar.m */; };
 		8FF9DE2C1BAA48C90006E706 /* BYBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF9DE2B1BAA48C90006E706 /* BYBanner.m */; };
 		8FF9DE2F1BAABC6F0006E706 /* BYHomeBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF9DE2E1BAABC6F0006E706 /* BYHomeBannerCell.m */; };
 		8FF9DE321BAABE250006E706 /* BYBannerFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF9DE311BAABE250006E706 /* BYBannerFrame.m */; };
@@ -234,6 +235,8 @@
 		8FE8BC101BB560BA00DA3695 /* CITYDATADB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = CITYDATADB.sqlite; sourceTree = "<group>"; };
 		8FE8BC121BB5777000DA3695 /* BYSearchViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYSearchViewCell.h; sourceTree = "<group>"; };
 		8FE8BC131BB5777000DA3695 /* BYSearchViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYSearchViewCell.m; sourceTree = "<group>"; };
+		8FE8BC151BB57DC800DA3695 /* BYSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYSearchBar.h; sourceTree = "<group>"; };
+		8FE8BC161BB57DC800DA3695 /* BYSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYSearchBar.m; sourceTree = "<group>"; };
 		8FF9DE2A1BAA48C90006E706 /* BYBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYBanner.h; sourceTree = "<group>"; };
 		8FF9DE2B1BAA48C90006E706 /* BYBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYBanner.m; sourceTree = "<group>"; };
 		8FF9DE2D1BAABC6F0006E706 /* BYHomeBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYHomeBannerCell.h; sourceTree = "<group>"; };
@@ -427,6 +430,8 @@
 				8FF9DE2E1BAABC6F0006E706 /* BYHomeBannerCell.m */,
 				8FE8BC121BB5777000DA3695 /* BYSearchViewCell.h */,
 				8FE8BC131BB5777000DA3695 /* BYSearchViewCell.m */,
+				8FE8BC151BB57DC800DA3695 /* BYSearchBar.h */,
+				8FE8BC161BB57DC800DA3695 /* BYSearchBar.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -765,6 +770,7 @@
 				8F9A10821BA913460013F480 /* AFHTTPRequestOperation.m in Sources */,
 				8F9A11341BA9943C0013F480 /* NSData+ImageContentType.m in Sources */,
 				8FE597F61BB4F69F00B69A33 /* BYCity.m in Sources */,
+				8FE8BC171BB57DC800DA3695 /* BYSearchBar.m in Sources */,
 				8F4ABC561BA6F9AD007DD25C /* BYSelectViewController.m in Sources */,
 				8FCA53361BB2A121000A1163 /* BYTitleView.m in Sources */,
 				8F9A10841BA913460013F480 /* AFHTTPSessionManager.m in Sources */,

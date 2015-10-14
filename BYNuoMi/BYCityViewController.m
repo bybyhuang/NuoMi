@@ -32,9 +32,29 @@
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(dismissLastController)];
     
-    
+    //添加消息监听器
+    [self setUpNotification];
     
 }
+
+/**
+ *  添加消息监听器
+ */
+- (void)setUpNotification
+{
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    
+    [center addObserver:self selector:@selector(searchCity:) name:@"BYSearchCityNotification" object:nil];
+}
+
+- (void)searchCity:(NSNotification *)notificationxr
+{
+    
+    
+    self.tableView.sectionIndexColor = [UIColor clearColor];
+    
+}
+
 
 
 /**
@@ -152,46 +172,78 @@
  */
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return self.cityInitials.count;
+    return self.cityInitials.count+1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     //先取出组所对应的首字母
-    NSString *initial =  self.cityInitials[section];
-    NSArray *array = self.cityArray[section][initial];
+    if(section - 1>=0)
+    {
+        NSString *initial =  self.cityInitials[section-1];
+        NSArray *array = self.cityArray[section-1][initial];
+        
+        return array.count;
+    }
     
-    return array.count;
+    return 1;
+    
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BYSearchViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"city"];
-    
-    if(cell == nil)
+    if(indexPath.section-1 >=0)
     {
-        cell = [[BYSearchViewCell alloc] init];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"city"];
+        
+        if(cell == nil)
+        {
+            cell = [[UITableViewCell alloc] init];
+        }
+        
+        //先取出组所对应的首字母
+        NSString *initial =  self.cityInitials[indexPath.section-1];
+        NSArray *array = self.cityArray[indexPath.section-1][initial];
+        //取出具体的城市模型
+        BYCity *city = array[indexPath.row];
+        
+        cell.textLabel.text = city.city_name;
+        return cell;
     }
     
-    //先取出组所对应的首字母
-    NSString *initial =  self.cityInitials[indexPath.section];
-    NSArray *array = self.cityArray[indexPath.section][initial];
-    //取出具体的城市模型
-    BYCity *city = array[indexPath.row];
+    if(indexPath.section==0)
+    {
+        BYSearchViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"search"];
+        if(cell == nil)
+        {
+            cell = [[BYSearchViewCell alloc] init];
+            
+        }
+        return cell;
+    }
     
-//    cell.textLabel.text = city.city_name;
+    UITableViewCell *cell = [[UITableViewCell alloc] init];
+    
     return cell;
+    
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return self.cityInitials[section];
+    if(section-1>=0)
+    {
+        return self.cityInitials[section-1];
+    }
+    return nil;
+    
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
-    //
-    return self.cityInitials;
+    NSMutableArray *array = [NSMutableArray arrayWithArray:self.cityInitials];
+    [array insertObject:@"#" atIndex:0];
+    
+    return array;
 }
 
 
@@ -199,8 +251,8 @@
 {
     //隐藏导航栏
     
-    
-//    [self.navigationController setNavigationBarHidden:YES animated:YES];
+//    
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 /*
 // Override to support conditional editing of the table view.
